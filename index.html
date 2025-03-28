@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ISDIA Website</title>
+    <link rel="icon" href="class.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+   
+</head>
+<body>
+    <header>
+        <h1>Ingénierie en Science de Données et Intelligence Artificielle</h1>
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+        <nav>
+            <ul id="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#courses1">Courses</a></li>
+                <li><a href="#submit">Submit Course</a></li>
+                <!-- <li><a href="#contact">Contact</a></li> -->
+            </ul>
+        </nav>
+    </header>
+    <section id="home" class="hero">
+        <h2>Bienvenue sur le Hub des Cours-TDs-TPs Étudiants</h2>
+        <p>Trouvez et partagez des cours avec vos camarades de classe.</p>
+
+        <button onclick="scrollToSection('courses')">Explorer les Cours</button>
+    </section><br><br>
+    <!-- <img id="courses1" src="ensaf.jpg" class="ensaf" alt="ensa fes"> -->
+    <div class="card-container">
+        <div class="card">
+            <div class="card-front">
+                <img src="ensaf.jpg" class="ensaf" alt="ENSAF Logo">
+            </div>
+            <div class="card-back">
+                <img src="logo.webp" alt="Your Logo">
+            </div>
+        </div>
+    </div>
+
+    <br id=""><br id=""><br><br id="">
+    <section id="courses" class="content">
+        <h2>Cours Disponibles</h2>
+        <div class="radio-buttons">
+            <label>
+                <input type="radio" name="course" value="S1"> S1
+            </label>
+            <label>
+                <input type="radio" name="course" value="S2"> S2
+            </label>
+            <label>
+                <input type="radio" name="course" value="S3"> S3
+            </label>
+            <label>
+                <input type="radio" name="course" value="S4"> S4
+            </label>
+            <label>
+                <input type="radio" name="course" value="S5"> S5
+            </label>
+        </div>
+        <div id="sub-course" class="radio-buttons" style="display: none;">
+            <label>
+                <input type="radio" name="sub-course" value="Cours"> Cours
+            </label>
+            <label>
+                <input type="radio" name="sub-course" value="TD"> TD
+            </label>
+            <label>
+                <input type="radio" name="sub-course" value="TP"> TP
+            </label>
+        </div>
+        <ul id="course-list"></ul>
+    </section>     
+    
+    <section id="submit" class="submit-section">
+        <h2>Soumettre un Cours</h2>
+    
+        <!-- Warning Message -->
+        <div class="warning" style=" color: red; display: flex; align-items: center; gap: 10px; font-weight: bold; background: #ffe5e5; padding: 10px; border-radius: 5px; border-left: 5px solid red; margin-bottom: 15px;">
+            <img src="warning.png" 
+                 alt="Warning Icon" width="50" height="50">
+            <span>Cette fonctionnalité n'est pas disponible pour le moment, car GitHub Pages ne prend pas en charge les services backend.</span>
+        </div>
+    
+        <form id="course-form">
+            <input type="text" id="course-name" placeholder="Course Name" required>
+            <textarea id="course-description" placeholder="Course Description" required></textarea>
+    
+            <!-- Choose File Type -->
+            <div class="file-type-container">
+                <label><input type="radio" name="file-type" value="pdf" required> PDF</label>
+                <label><input type="radio" name="file-type" value="zip" required> ZIP</label>
+            </div>
+    
+            <!-- File Upload Section -->
+            <div class="pdf-input-container" id="file-upload-section" style="display: none;">
+                <img src="upload.png" alt="File Icon">
+                <label id="upload-label" for="course-file">Upload File</label>
+                <input type="file" id="course-file" required>
+            </div>
+    
+            <!-- Choose Semester -->
+            <div class="semester-container">
+                <label><input type="radio" name="semester" value="S1" required> S1</label>
+                <label><input type="radio" name="semester" value="S2" required> S2</label>
+                <label><input type="radio" name="semester" value="S3" required> S3</label>
+                <label><input type="radio" name="semester" value="S4" required> S4</label>
+                <label><input type="radio" name="semester" value="S5" required> S5</label>
+            </div>
+    
+            <!-- Choose Course Type -->
+            <div class="course-type-container" id="course-type-section" style="display: none;">
+                <label><input type="radio" name="course-type" value="Cours" required> Cours</label>
+                <label><input type="radio" name="course-type" value="TD" required> TD</label>
+                <label><input type="radio" name="course-type" value="TP" required> TP</label>
+            </div>
+    
+            <button type="submit">Submit</button>
+        </form>
+    </section>     
+    
+
+    <!-- Notification Element -->
+    <div id="notification" class="notification"></div>
+    
+    <footer>
+        <p>&copy; 2025 ENSA de Fés. All rights reserved - no need to know me.</p>
+    </footer>
+    
+    <script src="main.js">
+
+    </script>
+</body>
+</html>
